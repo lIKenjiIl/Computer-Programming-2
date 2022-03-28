@@ -1,0 +1,31 @@
+#include <stdio.h>
+void main()
+{  
+   int Cid, Csumed;
+   float Unit, surchg=0, UnitCha,netamt;
+
+   printf("Input Customer ID :");
+   scanf("%d",&Cid);
+   printf("Input the unit consumed by the customer : ");
+   scanf("%d",&Csumed);
+   if (Csumed >199 )
+	Unit = 1.50;
+   else	if (Csumed>=250 && Csumed<400)
+		Unit = 1.60;
+	else if (Csumed>=400 && Csumed<600)
+			Unit = 1.85;
+		else
+			Unit = 2.00;
+   UnitCha = Csumed*Unit;
+   if (UnitCha>300)
+	surchg = UnitCha*15/100.0;
+   netamt = UnitCha+surchg;
+   if (netamt  < 100)
+	netamt =100;
+   printf("\nElectricity Bill\n");
+   printf("Customer ID#                        :%d\n",Cid);
+   printf("unit Consumed                       :%d\n",Csumed);
+   printf("Amount Charges @₱. %4.2f  per unit   :₱%8.2f\n",Unit,UnitCha);
+   printf("Surchage Amount                     :₱%8.2f\n",surchg);
+   printf("Total Customer Bill                 :₱%8.2f\n",netamt);
+}  
