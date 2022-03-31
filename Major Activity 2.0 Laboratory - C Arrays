@@ -1,0 +1,28 @@
+#include <stdio.h> 
+#include <string.h> 
+ 
+int main() 
+{ 
+    char IDNumber[15]; 
+    char password[12]; 
+    
+    printf("Enter your IDNumber:\n"); 
+    scanf("%s",&IDNumber); 
+ 
+    printf("Enter your password:\n"); 
+    scanf("%s",&password); 
+ 
+    if(strcmp(IDNumber,"12345")==0){ 
+        if(strcmp(password,"123")==0){ 
+        
+        printf("\nWelcome.\nLogin Success!"); 
+        printf("\nID Number: 12345");
+        
+        }else{ 
+    printf("\nwrong password"); 
+} 
+    }else{ 
+    printf("\nUser doesn't exist"); 
+} 
+    return 0; 
+} 
