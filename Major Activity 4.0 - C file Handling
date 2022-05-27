@@ -1,0 +1,46 @@
+#include <stdio.h>
+int main()
+{
+   char name[50];
+   int i, num, ID;
+   float math, sci, eng;
+   float total, percentage;
+
+   printf("Enter number of students: ");
+   scanf("%d", &num);
+
+   FILE *fptr;
+   fptr = (fopen("C:\\student.txt", "w"));
+   if(fptr == NULL)
+   {
+       printf("Error!");
+       exit(1);
+   }
+
+   for(i = 0; i < num; ++i)
+   {
+      printf("For student: %d\nEnter name: ", i+1);
+      scanf("%s", name);
+      
+      printf("School ID: ");
+      scanf("%d", &ID);
+
+      printf("Math Grade: ");
+      scanf("%f", &math);
+      
+      printf("Science Grade: ");
+      scanf("%f", &sci);
+      
+      printf("English Grade: ");
+      scanf("%f", &eng);
+      
+      total = math, sci, eng;
+      percentage = (total/ 300.0) * 100;
+
+      fprintf(fptr,"\nName: %s \nID=%d \nMath Grade=%.2f \nScience Grade=%.2f \nEnglish Grade=%.2f \nTotal Grade = %.2f \nGrade Average = %.2f\n", name, ID, math, sci, eng, total, percentage);
+      
+   }
+
+   fclose(fptr);
+   return 0;
+}
