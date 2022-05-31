@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main ()
+{
+  char str[100];
+  char fname[50];
+  char str1;
+  FILE * fpw;
+  int i,n;
+  
+    fpw = fopen("C:\\text.txt", "a"); 
+    printf(" Input how many line to be appended: ");
+    scanf("%d", &n);
+    for(i = 0; i < n+1;i++)
+    
+    {
+    fgets(str, sizeof str, stdin);
+    fputs(str, fpw);
+  }
+  
+  fclose (fpw);
+	fpw = fopen (fname, "r"); 
+	str1 = fgetc(fpw);
+	while (str1 != EOF)
+		
+		{
+			printf ("%c", str1);
+			str1 = fgetc(fpw);
+		}
+		
+    printf("\n\n");
+    fclose (fpw);
+
+  return 0;
+}
