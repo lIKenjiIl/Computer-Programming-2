@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+
+ int main()
+{
+    char ch[50];
+    printf("\nEnter any String: ");
+    scanf("%s", &ch);
+    
+    printf("Reveres ordered word:\n");
+    for(int i=strlen(ch)-1; i>=0;i--){
+        printf("%c",ch[i]);
+    }
+ return 0;
+}
